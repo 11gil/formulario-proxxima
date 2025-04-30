@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - Proxxima</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Proxxima Internet</h1>
+    <p class="slogan">A próxima conexão é com você!</p>
+  </header>
+
+  <main>
+    <form id="cadastroForm">
+      <p>Preencha seus dados para entrarmos em contato:</p>
+
+      <label>Nome completo:</label>
+      <input type="text" name="nome" required />
+
+      <label>CPF:</label>
+      <input type="text" name="cpf" required />
+
+      <label>Data de Nascimento:</label>
+      <input type="date" name="nascimento" required />
+
+      <label>CEP:</label>
+      <input type="text" name="cep" required />
+
+      <label>Rua:</label>
+      <input type="text" name="rua" required />
+
+      <label>Número:</label>
+      <input type="text" name="numero" required />
+
+      <label>Bairro:</label>
+      <input type="text" name="bairro" required />
+
+      <label>Cidade:</label>
+      <input type="text" name="cidade" required />
+
+      <label>Estado:</label>
+      <select name="estado" required>
+        <option value="">Selecione</option>
+        <option>Bahia</option>
+        <option>Ceará</option>
+        <option>Paraíba</option>
+        <option>Pernambuco</option>
+        <option>Rio Grande do Norte</option>
+      </select>
+
+      <label>Referência do local:</label>
+      <input type="text" name="referencia" />
+
+      <label>Telefone com DDD:</label>
+      <input type="tel" name="telefone" required />
+
+      <label>E-mail:</label>
+      <input type="email" name="email" required />
+
+      <button type="submit">ENVIAR</button>
+    </form>
+
+    <p id="mensagem"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
