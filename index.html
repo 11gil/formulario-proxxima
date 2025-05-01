@@ -2,70 +2,31 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cadastro - Proxxima</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <header>
-    <h1>Proxxima Internet</h1>
-    <p class="slogan">A próxima conexão é com você!</p>
-  </header>
-
   <main>
-    <form id="cadastroForm">
-      <p>Preencha seus dados para entrarmos em contato:</p>
+    <h1>Solicite o contato de um consultor</h1>
+    <p>Preencha os dados abaixo e entrarei em contato com você:</p>
 
-      <label>Nome completo:</label>
-      <input type="text" name="nome" required />
+    <form action="https://formsubmit.co/gilson.tavares1510@gmail.com" method="POST">
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="tel" name="telefone" placeholder="Telefone para contato" required />
+      <input type="text" name="cidade" placeholder="Cidade" required />
+      <input type="text" name="estado" placeholder="Estado" required />
 
-      <label>CPF:</label>
-      <input type="text" name="cpf" required />
+      <!-- Proteção contra spam -->
+      <input type="hidden" name="_captcha" value="false" />
 
-      <label>Data de Nascimento:</label>
-      <input type="date" name="nascimento" required />
+      <!-- Redirecionamento após envio -->
+      <input type="hidden" name="_next" value="https://formulario-proxxima.vercel.app/obrigado.html" />
 
-      <label>CEP:</label>
-      <input type="text" name="cep" required />
 
-      <label>Rua:</label>
-      <input type="text" name="rua" required />
-
-      <label>Número:</label>
-      <input type="text" name="numero" required />
-
-      <label>Bairro:</label>
-      <input type="text" name="bairro" required />
-
-      <label>Cidade:</label>
-      <input type="text" name="cidade" required />
-
-      <label>Estado:</label>
-      <select name="estado" required>
-        <option value="">Selecione</option>
-        <option>Bahia</option>
-        <option>Ceará</option>
-        <option>Paraíba</option>
-        <option>Pernambuco</option>
-        <option>Rio Grande do Norte</option>
-      </select>
-
-      <label>Referência do local:</label>
-      <input type="text" name="referencia" />
-
-      <label>Telefone com DDD:</label>
-      <input type="tel" name="telefone" required />
-
-      <label>E-mail:</label>
-      <input type="email" name="email" required />
-
-      <button type="submit">ENVIAR</button>
+      <button type="submit">Enviar</button>
     </form>
-
-    <p id="mensagem"></p>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
+
