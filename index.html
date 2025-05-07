@@ -2,31 +2,58 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadastro - Proxxima</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - Proxxima Telecom</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <h1>Solicite o contato de um consultor</h1>
-    <p>Preencha os dados abaixo e entrarei em contato com você:</p>
+  <div class="container">
+    <header>
+      <h1>Proxxima Telecom</h1>
+      <p>Gilson Tavares – Consultor e Vendedor Externo</p>
+    </header>
 
     <form action="https://formsubmit.co/gilson.tavares1510@gmail.com" method="POST">
-      <input type="text" name="nome" placeholder="Nome completo" required />
-      <input type="tel" name="telefone" placeholder="Telefone para contato" required />
-      <input type="text" name="cidade" placeholder="Cidade" required />
-      <input type="text" name="estado" placeholder="Estado" required />
-
-      <!-- Proteção contra spam -->
+      <!-- Oculta o captcha e redireciona após envio -->
       <input type="hidden" name="_captcha" value="false" />
-
-      <!-- Redirecionamento após envio -->
       <input type="hidden" name="_next" value="https://formulario-proxxima.vercel.app/obrigado.html" />
 
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="Nome" required placeholder="Seu nome completo" />
 
-      <button type="submit">Enviar</button>
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="CPF" required placeholder="Para consulta de crédito" />
+
+      <label for="endereco">Endereço completo:</label>
+      <input type="text" id="endereco" name="Endereço" required placeholder="Rua, número, bairro, cidade" />
+
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="CEP" required placeholder="00000-000" />
+
+      <label for="telefone">Telefone com DDD:</label>
+      <input type="tel" id="telefone" name="Telefone" required placeholder="(xx) xxxxx-xxxx" />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="Email" required placeholder="Seu melhor e-mail" />
+
+      <label for="referencia">Ponto de referência:</label>
+      <input type="text" id="referencia" name="Referência" placeholder="Próximo a..." />
+
+      <h2>Indique um amigo e ganhe 50% de desconto!</h2>
+
+      <label for="indicado-nome">Nome do amigo indicado:</label>
+      <input type="text" id="indicado-nome" name="Nome do indicado" placeholder="Nome completo do amigo" />
+
+      <label for="indicado-cpf">CPF do amigo indicado:</label>
+      <input type="text" id="indicado-cpf" name="CPF do indicado" placeholder="000.000.000-00" />
+
+      <label for="indicado-telefone">Telefone do amigo (com DDD):</label>
+      <input type="tel" id="indicado-telefone" name="Telefone do indicado" placeholder="(xx) xxxxx-xxxx" />
+
+      <button type="submit">Enviar cadastro</button>
     </form>
-  </main>
+  </div>
 </body>
 </html>
+
 
