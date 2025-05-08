@@ -1,59 +1,44 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
   padding: 20px;
   margin: 0;
 }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 30px;
+form {
+  background-color: #ffffff;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #ccc;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #0073e6;
-  margin-bottom: 5px;
-}
-
-h2 {
-  color: #444;
-  margin-top: 30px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 label {
   display: block;
-  margin: 15px 0 5px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
-input {
+input, button {
   width: 100%;
   padding: 10px;
-  border: 1px solid #bbb;
+  margin-top: 5px;
   border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 button {
-  margin-top: 20px;
-  padding: 12px;
-  width: 100%;
-  background-color: #0073e6;
+  background-color: #004aad;
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 button:hover {
-  background-color: #005bb5;
+  background-color: #003080;
 }
 
 .identidade {
@@ -84,4 +69,5 @@ button:hover {
   font-weight: bold;
   color: #008000;
 }
+
 
