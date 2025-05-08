@@ -55,3 +55,33 @@ button {
 button:hover {
   background-color: #005bb5;
 }
+
+.identidade {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.identidade h1 {
+  font-size: 2em;
+  color: #004aad;
+}
+
+.identidade h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 5px 0;
+}
+
+.identidade p {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.contrate {
+  font-weight: bold;
+  color: #008000;
+}
+
