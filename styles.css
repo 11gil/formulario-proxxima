@@ -1,73 +1,107 @@
+:root {
+  --cor-principal: #0469B1; /* azul Proxxima */
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header.identidade {
+  text-align: center;
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 1.8rem 1rem;
+}
+
+header.identidade h1 {
+  font-size: 2rem;
   margin: 0;
 }
 
-form {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+header.identidade h2 {
+  font-size: 1.3rem;
+  margin: 0.3rem 0;
 }
 
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-input, button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #004aad;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #003080;
-}
-
-.identidade {
-  text-align: center;
-  margin-bottom: 20px;
-  background-color: #f2f2f2;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.identidade h1 {
-  font-size: 2em;
-  color: #004aad;
-}
-
-.identidade h2 {
-  font-size: 1.5em;
-  color: #333;
-  margin: 5px 0;
-}
-
-.identidade p {
-  font-size: 1.1em;
-  margin: 5px 0;
+header.identidade p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
 }
 
 .contrate {
   font-weight: bold;
-  color: #008000;
+  margin-top: 0.5rem;
 }
 
+/* Frase de chamada */
+.frase-conexao {
+  text-align: center;
+  background-color: #e8f3fc;
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  color: #03426d;
+  font-weight: 500;
+}
 
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  background-color: var(--cor-principal);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #034e85;
+}
+
+main.mensagem-obrigado {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+}
