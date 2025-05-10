@@ -103,7 +103,6 @@
         <div class="compartilhar">
           <h3>📢 Compartilhe com amigos!</h3>
         
-          <button onclick="compartilhar()">Compartilhar</button>
           <button onclick="copiarLink()">Copiar link</button>
         
           <a href="https://wa.me/?text=https://formulario-proxxima.vercel.app" target="_blank">
@@ -114,19 +113,8 @@
 
       </form>
 
-      <script>
-        function compartilhar() {
-          if (navigator.share) {
-            navigator.share({
-              title: 'Formulário Proxxima',
-              text: 'Cadastre-se para contratar a melhor internet!',
-              url: 'https://formulario-proxxima.vercel.app'
-            }).catch(console.error);
-          } else {
-            alert('Compartilhamento não suportado neste dispositivo.');
-          }
-        }
       
+      <script>
         function copiarLink() {
           const link = "https://formulario-proxxima.vercel.app";
           navigator.clipboard.writeText(link).then(() => {
@@ -140,9 +128,6 @@
     <footer>
       <p>&copy; 2025 Proxxima Telecom - Gilson Tavares</p>
     </footer>
-
-
-    
 
   </body>
 </html>
