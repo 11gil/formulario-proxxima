@@ -105,3 +105,28 @@ main.mensagem-obrigado {
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
 }
+
+.compartilhar {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.compartilhar button,
+.compartilhar a {
+  margin: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: #0469B1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.compartilhar button:hover,
+.compartilhar a:hover {
+  background-color: #004080;
+}
+
