@@ -68,6 +68,9 @@
         <label for="cidade">Cidade *</label>
         <input type="text" id="cidade" name="Cidade" placeholder="Digite a cidade" required />
 
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="Ex: 59000-000" required>
+
         <label for="referencia">Ponto de referência</label>
         <input type="text" id="referencia" name="Referência" placeholder="Digite um ponto de referência" />
 
@@ -102,9 +105,7 @@
 
         <div class="compartilhar">
           <h3>📢 Compartilhe com amigos!</h3>
-        
-          <button onclick="copiarLink()">Copiar link</button>
-        
+
           <a href="https://wa.me/?text=https://formulario-proxxima.vercel.app" target="_blank">
             Compartilhar via WhatsApp
           </a>
