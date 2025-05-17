@@ -93,20 +93,28 @@
         </div>
       </form>
 
+      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
       <script>
-        document.getElementById("formulario").addEventListener("submit", function(event) {
-          event.preventDefault();
-
-          emailjs.sendForm('service_fau06ha', 'template_c963omc', this)
-            .then(function(response) {
-              alert("Formulário enviado com sucesso!");
+        (function () {
+          emailjs.init("eNSEm8l4n2g-v-V9H"); // Public Key
+        })();
+      
+        document.querySelector("form").addEventListener("submit", function (event) {
+          event.preventDefault(); // evita envio padrão
+      
+          const form = event.target;
+      
+          emailjs.sendForm("service_fau06ha", "template_c963omc", form)
+            .then(() => {
+              // redirecionar diretamente para a página de obrigado
               window.location.href = "https://formulario-proxxima.vercel.app/obrigado.html";
-            }, function(error) {
-              alert("Erro ao enviar. Tente novamente.");
-              console.log(error);
+            }, (error) => {
+              alert("Erro ao enviar o formulário. Tente novamente mais tarde.");
+              console.error("Erro:", error);
             });
         });
       </script>
+      
     </main>
 
     <footer>
