@@ -2,9 +2,15 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cadastro Proxxima</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("eNSEm8l4n2g-v-V9H"); // Sua Public Key
+      })();
+    </script>
   </head>
   <body>
     <header class="identidade">
@@ -19,20 +25,10 @@
     </section>
 
     <main>
-      <form
-        action="https://formsubmit.co/gilson.tavares1510@gmail.com"
-        method="POST"
-      >
-        <!-- Redirecionamento após envio -->
-        <input
-          type="hidden"
-          name="_next"
-          value="https://formulario-proxxima.vercel.app/obrigado.html"
-        />
-
+      <form id="formulario">
         <!-- Estado -->
         <label for="estado">Estado *</label>
-        <select name="Estado" id="estado" required>
+        <select name="estado" id="estado" required>
           <option value="">Selecione seu estado</option>
           <option value="Bahia">Bahia</option>
           <option value="Paraíba">Paraíba</option>
@@ -42,65 +38,50 @@
 
         <!-- Dados Pessoais -->
         <label for="nome">Nome completo *</label>
-        <input type="text" id="nome" name="Nome" placeholder="Digite seu nome completo" required />
+        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" />
 
         <label for="cpf">CPF (para consulta) *</label>
-        <input type="text" id="cpf" name="CPF" placeholder="Digite seu CPF" required />
+        <input type="text" id="cpf" name="cpf" required placeholder="Digite seu CPF" />
 
         <label for="nascimento">Data de nascimento *</label>
-        <input type="date" id="nascimento" name="Data de Nascimento" required />
+        <input type="date" id="nascimento" name="nascimento" required />
 
         <label for="whatsapp">WhatsApp com DDD *</label>
-        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="Digite seu WhatsApp com DDD" required />
+        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="Digite seu WhatsApp com DDD" />
 
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="Email" placeholder="Digite seu e-mail" />
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" />
 
         <!-- Endereço -->
         <label for="rua">Rua *</label>
-        <input type="text" id="rua" name="Rua" placeholder="Digite a rua" required />
+        <input type="text" id="rua" name="rua" required placeholder="Digite a rua" />
 
         <label for="numero">Número *</label>
-        <input type="text" id="numero" name="Número" placeholder="Digite o número" required />
+        <input type="text" id="numero" name="numero" required placeholder="Digite o número" />
 
         <label for="bairro">Bairro *</label>
-        <input type="text" id="bairro" name="Bairro" placeholder="Digite o bairro" required />
+        <input type="text" id="bairro" name="bairro" required placeholder="Digite o bairro" />
 
         <label for="cidade">Cidade *</label>
-        <input type="text" id="cidade" name="Cidade" placeholder="Digite a cidade" required />
+        <input type="text" id="cidade" name="cidade" required placeholder="Digite a cidade" />
 
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="Ex: 59000-000" required />
+        <label for="cep">CEP *</label>
+        <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" required placeholder="Ex: 59000-000" />
 
         <label for="referencia">Ponto de referência</label>
-        <input type="text" id="referencia" name="Referência" placeholder="Digite um ponto de referência" />
+        <input type="text" id="referencia" name="referencia" placeholder="Digite um ponto de referência" />
 
         <!-- Indicação -->
         <h3>Indique um amigo e ganhe 50% de desconto em 1 mês</h3>
 
-        <label for="nome-indicado">Nome completo do indicado</label>
-        <input
-          type="text"
-          id="nome-indicado"
-          name="Nome do indicado"
-          placeholder="Nome completo da pessoa indicada"
-        />
+        <label for="nomeIndicado">Nome completo do indicado</label>
+        <input type="text" id="nomeIndicado" name="nomeIndicado" placeholder="Nome completo da pessoa indicada" />
 
-        <label for="cpf-indicado">CPF do indicado</label>
-        <input
-          type="text"
-          id="cpf-indicado"
-          name="CPF do indicado"
-          placeholder="CPF da pessoa indicada"
-        />
+        <label for="cpfIndicado">CPF do indicado</label>
+        <input type="text" id="cpfIndicado" name="cpfIndicado" placeholder="CPF da pessoa indicada" />
 
-        <label for="telefone-indicado">Telefone com DDD do indicado</label>
-        <input
-          type="tel"
-          id="telefone-indicado"
-          name="Telefone do indicado"
-          placeholder="WhatsApp da pessoa indicada"
-        />
+        <label for="telefoneIndicado">Telefone com DDD do indicado</label>
+        <input type="tel" id="telefoneIndicado" name="telefoneIndicado" placeholder="WhatsApp da pessoa indicada" />
 
         <button type="submit">Enviar</button>
 
@@ -111,6 +92,21 @@
           </a>
         </div>
       </form>
+
+      <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          emailjs.sendForm('service_fau06ha', 'template_c963omc', this)
+            .then(function(response) {
+              alert("Formulário enviado com sucesso!");
+              window.location.href = "https://formulario-proxxima.vercel.app/obrigado.html";
+            }, function(error) {
+              alert("Erro ao enviar. Tente novamente.");
+              console.log(error);
+            });
+        });
+      </script>
     </main>
 
     <footer>
