@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cadastro Proxxima</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
       (function(){
-        emailjs.init("eNSEm8l4n2g-v-V9H"); // Sua Public Key
+        emailjs.init("eNSEm8l4n2g-v-V9H"); // Public Key (User ID)
       })();
     </script>
   </head>
@@ -26,7 +26,6 @@
 
     <main>
       <form id="formulario">
-        <!-- Estado -->
         <label for="estado">Estado *</label>
         <select name="estado" id="estado" required>
           <option value="">Selecione seu estado</option>
@@ -36,7 +35,6 @@
           <option value="Rio Grande do Norte">Rio Grande do Norte</option>
         </select>
 
-        <!-- Dados Pessoais -->
         <label for="nome">Nome completo *</label>
         <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" />
 
@@ -52,7 +50,6 @@
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" placeholder="Digite seu e-mail" />
 
-        <!-- Endereço -->
         <label for="rua">Rua *</label>
         <input type="text" id="rua" name="rua" required placeholder="Digite a rua" />
 
@@ -71,11 +68,10 @@
         <label for="referencia">Ponto de referência</label>
         <input type="text" id="referencia" name="referencia" placeholder="Digite um ponto de referência" />
 
-        <!-- Indicação -->
         <h3>Indique um amigo e ganhe 50% de desconto em 1 mês</h3>
 
         <label for="nomeIndicado">Nome completo do indicado</label>
-        <input type="text" id="nomeIndicado" name="nomeIndicado" placeholder="Nome completo da pessoa indicada" />
+        <input type="text" id="nomeIndicado" name="nomeIndicado" placeholder="Nome da pessoa indicada" />
 
         <label for="cpfIndicado">CPF do indicado</label>
         <input type="text" id="cpfIndicado" name="cpfIndicado" placeholder="CPF da pessoa indicada" />
@@ -92,33 +88,27 @@
           </a>
         </div>
       </form>
-
-      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-      <script>
-        (function () {
-          emailjs.init("eNSEm8l4n2g-v-V9H"); // Public Key
-        })();
-      
-        document.querySelector("form").addEventListener("submit", function (event) {
-          event.preventDefault(); // evita envio padrão
-      
-          const form = event.target;
-      
-          emailjs.sendForm("service_fau06ha", "template_c963omc", form)
-            .then(() => {
-              // redirecionar diretamente para a página de obrigado
-              window.location.href = "https://formulario-proxxima.vercel.app/obrigado.html";
-            }, (error) => {
-              alert("Erro ao enviar o formulário. Tente novamente mais tarde.");
-              console.error("Erro:", error);
-            });
-        });
-      </script>
-      
     </main>
 
     <footer>
       <p>&copy; 2025 Proxxima Telecom - Gilson Tavares</p>
     </footer>
+
+    <script>
+      document.querySelector("#formulario").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const form = event.target;
+
+        emailjs.sendForm("service_fau06ha", "template_c963omc", form)
+          .then(() => {
+            window.location.href = "obrigado.html";
+          }, (error) => {
+            alert("Erro ao enviar o formulário. Tente novamente mais tarde.");
+            console.error("Erro:", error);
+          });
+      });
+    </script>
   </body>
 </html>
+
