@@ -1,56 +1,46 @@
-:root {
-  --cor-principal: #0469B1; /* azul Proxxima */
-}
-
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  color: #333;
 }
 
 header.identidade {
   text-align: center;
-  background-color: var(--cor-principal);
+  background-color: #00695c;
   color: white;
-  padding: 1.8rem 1rem;
+  padding: 1rem;
 }
 
-header.identidade h1 {
-  font-size: 2rem;
-  margin: 0;
+h1, h2, h3 {
+  margin: 0.5rem 0;
 }
 
-header.identidade h2 {
-  font-size: 1.3rem;
-  margin: 0.3rem 0;
-}
-
-header.identidade p {
-  margin: 0.2rem 0;
-  font-size: 1rem;
-}
-
-.contrate {
+p.contrate {
   font-weight: bold;
   margin-top: 0.5rem;
 }
 
-/* Frase de chamada */
 .frase-conexao {
   text-align: center;
-  background-color: #e8f3fc;
-  padding: 1rem 1.2rem;
+  padding: 1rem;
+  background-color: #fffde7;
   font-size: 1.1rem;
-  color: #03426d;
-  font-weight: 500;
 }
 
-form {
+.instrucoes {
+  background-color: #e0f7fa;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+}
+
+main {
   max-width: 600px;
   margin: 2rem auto;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -58,75 +48,58 @@ form {
 
 form label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-top: 1rem;
   font-weight: bold;
 }
 
 form input,
-form select,
-form textarea {
+form select {
   width: 100%;
-  padding: 0.7rem;
-  margin-bottom: 1.2rem;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  box-sizing: border-box;
 }
 
-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-form button {
-  background-color: var(--cor-principal);
+button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  background-color: #00796b;
   color: white;
   border: none;
-  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
 }
 
-form button:hover {
-  background-color: #034e85;
-}
-
-main.mensagem-obrigado {
-  max-width: 600px;
-  margin: 4rem auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
+button:hover {
+  background-color: #004d40;
 }
 
 .compartilhar {
-  text-align: center;
   margin-top: 2rem;
+  text-align: center;
 }
 
-.compartilhar button,
 .compartilhar a {
-  margin: 0.5rem;
-  padding: 0.6rem 1rem;
-  background-color: #0469B1;
-  color: white;
-  border: none;
-  border-radius: 6px;
+  display: inline-block;
+  margin-top: 0.5rem;
   text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: white;
+  background-color: #25d366;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 
-.compartilhar button:hover,
-.compartilhar a:hover {
-  background-color: #004080;
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  color: #666;
 }
+
+
+
 

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cadastro Proxxima</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
       (function(){
-        emailjs.init("eNSEm8l4n2g-v-V9H"); // Public Key (User ID)
+        emailjs.init("eNSEm8l4n2g-v-V9H");
       })();
     </script>
   </head>
@@ -22,6 +22,12 @@
 
     <section class="frase-conexao">
       <p>A próxima conexão é com você. Complete o formulário e vamos ativar a melhor Internet para seu endereço.</p>
+    </section>
+
+    <!-- ✅ Instruções de preenchimento -->
+    <section class="instrucoes">
+      <p>👋 <strong>Importante:</strong> Se você <strong>ainda não é cliente da Proxxima</strong>, preencha todos os campos abaixo com seus dados pessoais e de endereço.</p>
+      <p>✅ Se você <strong>já é cliente</strong>, pode ir direto para a parte <strong>"Indique um amigo"</strong> mais abaixo. Não precisa preencher os campos acima novamente.</p>
     </section>
 
     <main>
@@ -68,10 +74,29 @@
         <label for="referencia">Ponto de referência</label>
         <input type="text" id="referencia" name="referencia" placeholder="Digite um ponto de referência" />
 
-        <h3>Indique um amigo e ganhe 50% de desconto em 1 mês</h3>
+        <!-- ✅ Novos campos adicionados -->
+        <label for="turno">Melhor turno para instalação *</label>
+        <select name="turno" id="turno" required>
+          <option value="">Selecione</option>
+          <option value="Manhã">Manhã</option>
+          <option value="Tarde">Tarde</option>
+        </select>
+
+        <label for="vencimento">Melhor dia para vencimento do boleto *</label>
+        <select name="vencimento" id="vencimento" required>
+          <option value="">Selecione</option>
+          <option value="1">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+        </select>
+
+        <hr />
+
+        <h3>📣 Já é cliente? Indique um amigo e ganhe 50% de desconto!</h3>
 
         <label for="nomeIndicado">Nome completo do indicado</label>
-        <input type="text" id="nomeIndicado" name="nomeIndicado" placeholder="Nome da pessoa indicada" />
+        <input type="text" id="nomeIndicado" name="nomeIndicado" placeholder="Nome completo da pessoa indicada" />
 
         <label for="cpfIndicado">CPF do indicado</label>
         <input type="text" id="cpfIndicado" name="cpfIndicado" placeholder="CPF da pessoa indicada" />
@@ -95,14 +120,13 @@
     </footer>
 
     <script>
-      document.querySelector("#formulario").addEventListener("submit", function (event) {
+      document.querySelector("form").addEventListener("submit", function (event) {
         event.preventDefault();
-
         const form = event.target;
 
         emailjs.sendForm("service_fau06ha", "template_c963omc", form)
           .then(() => {
-            window.location.href = "obrigado.html";
+            window.location.href = "https://formulario-proxxima.vercel.app/obrigado.html";
           }, (error) => {
             alert("Erro ao enviar o formulário. Tente novamente mais tarde.");
             console.error("Erro:", error);
@@ -111,4 +135,3 @@
     </script>
   </body>
 </html>
-
