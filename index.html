@@ -31,6 +31,7 @@
     </section>
 
     <main>
+      <!-- FORMULÁRIO PRINCIPAL -->
       <form id="formulario">
         <label for="estado">Estado *</label>
         <select name="estado" id="estado" required>
@@ -74,7 +75,6 @@
         <label for="referencia">Ponto de referência</label>
         <input type="text" id="referencia" name="referencia" placeholder="Digite um ponto de referência" />
 
-        <!-- ✅ Novos campos adicionados -->
         <label for="turno">Melhor turno para instalação *</label>
         <select name="turno" id="turno" required>
           <option value="">Selecione</option>
@@ -91,8 +91,13 @@
           <option value="15">15</option>
         </select>
 
-        <hr />
+        <button type="submit">Enviar cadastro</button>
+      </form>
 
+      <hr />
+
+      <!-- FORMULÁRIO DE INDICAÇÃO -->
+      <form id="formIndicacao">
         <h3>📣 Já é cliente? Indique um amigo e ganhe 50% de desconto!</h3>
 
         <label for="nomeCliente">Seu nome completo *</label>
@@ -110,27 +115,44 @@
         <label for="telefoneIndicado">Telefone com DDD do indicado</label>
         <input type="tel" id="telefoneIndicado" name="telefoneIndicado" placeholder="WhatsApp da pessoa indicada" />
 
-        <button type="submit">Enviar</button>
-
-        <div class="compartilhar">
-          <h3>📢 Compartilhe com amigos!</h3>
-          <a href="https://wa.me/?text=https://formulario-proxxima.vercel.app" target="_blank">
-            Compartilhar via WhatsApp
-          </a>
-        </div>
+        <button type="submit">Enviar indicação</button>
       </form>
+
+      <!-- COMPARTILHAMENTO -->
+      <div class="compartilhar">
+        <h3>📢 Compartilhe com amigos!</h3>
+        <a href="https://wa.me/?text=https://formulario-proxxima.vercel.app" target="_blank">
+          Compartilhar via WhatsApp
+        </a>
+      </div>
     </main>
 
     <footer>
       <p>&copy; 2025 Proxxima Telecom - Gilson Tavares</p>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
-      document.querySelector("form").addEventListener("submit", function (event) {
+      // Envio do formulário de indicação
+      document.getElementById("formIndicacao").addEventListener("submit", function (event) {
         event.preventDefault();
         const form = event.target;
 
-    emailjs.sendForm("service_fau06ha", "template_proxxima_2025", form)
+        emailjs.sendForm("service_fau06ha", "template_indicacao_2025", form)
+          .then(() => {
+            window.location.href = "https://formulario-proxxima.vercel.app/obrigado.html";
+          }, (error) => {
+            alert("Erro ao enviar a indicação. Tente novamente mais tarde.");
+            console.error("Erro:", error);
+          });
+      });
+
+      // Envio do formulário de cadastro
+      document.getElementById("formulario").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const form = event.target;
+
+        emailjs.sendForm("service_fau06ha", "template_proxxima_2025", form)
           .then(() => {
             window.location.href = "https://formulario-proxxima.vercel.app/obrigado.html";
           }, (error) => {
@@ -141,3 +163,4 @@
     </script>
   </body>
 </html>
+
